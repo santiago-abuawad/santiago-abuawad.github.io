@@ -1,0 +1,29 @@
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('https://unifranz.edu.bo/wp-content/uploads/2023/09/SANTA-CRUZ-1.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.btn-group button {
+    background-color: #04AA6D; 
+    border: 1px solid green; 
+    color: white;
+    padding: 10px 26px; 
+    cursor: pointer; 
+    width: 50%; 
+    display: block; 
+    margin: auto;
+  }
+  
+  .btn-group button:not(:last-child) {
+    border-bottom: none; 
+  }
+  
+  .btn-group button:hover {
+    background-color: #3e8e41;
+  }
+  
