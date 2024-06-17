@@ -1,34 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Santiago Abuawad</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link type="text/css" rel="stylesheet" href="main.css"/> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - VS Code Interface</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
-<body>
-<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-  <div class="w3-display-topleft w3-padding-large w3-xlarge">
-    Logo
-  </div>
-  <div class="w3-display-middle">
-    <h1 class="w3-jumbo w3-animate-top">Santiago Abuawad</h1>
-    <hr class="w3-border-grey" style="margin:auto;width:40%">
-    <p class="w3-large w3-center">UNIVERSIDAD CATOLICA BOLIVIANA</p>
-    <div class="btn-group">
-        <button>Facebook</button>
-        <button>Instagram</button>
-        <button>Github</button>
-      </div>
+<body class="bg-black text-white font-roboto">
+    <div class="flex h-screen">
+        <!-- Activity Bar -->
+        <div class="w-16 bg-gray-800 flex flex-col items-center py-4 transition duration-500" id="activity-bar" aria-label="Activity Bar">
+            <button class="mb-4 hover:bg-gray-700 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="GitHub" aria-pressed="false"><i class="fab fa-github fa-2x"></i></button>
+            <button class="mb-4 hover:bg-gray-700 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="LinkedIn" aria-pressed="false"><i class="fab fa-linkedin fa-2x"></i></button>
+            <button class="mb-4 hover:bg-gray-700 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Instagram" aria-pressed="false"><i class="fab fa-instagram fa-2x"></i></button>
+            <button class="mb-4 hover:bg-gray-700 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Discord" aria-pressed="false"><i class="fab fa-discord fa-2x"></i></button>
+            <button class="mb-4 hover:bg-gray-700 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Email" aria-pressed="false"><i class="fas fa-envelope fa-2x"></i></button>
+            <button class="mb-4 hover:bg-gray-700 p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Codewars" aria-pressed="false"><i class="fas fa-code fa-2x"></i></button>
+        </div>
 
+        <!-- Primary Side Bar -->
+        <div class="w-64 bg-gray-850" id="sidebar" aria-label="Primary Side Bar">
+            <div id="explorer" class="p-4">
+                <ul>
+                    <li class="folder cursor-pointer hover:bg-gray-700 p-2 rounded transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" data-file="main"><i class="fas fa-folder mr-2"></i>main</li>
+                    <ul class="ml-4">
+                        <li class="file cursor-pointer hover:bg-gray-700 p-2 rounded transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" data-file="about-me"><i class="fas fa-file-alt mr-2"></i>About Me.md</li>
+                        <li class="file cursor-pointer hover:bg-gray-700 p-2 rounded transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" data-file="projects"><i class="fas fa-file-alt mr-2"></i>Projects.md</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
 
-  </div>
-  <div class="w3-display-bottomleft w3-padding-large">
-    Powered by <a href="example.com" target="_blank">SantiagoAbuawad</a>
-  </div>
-</div>
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Tabs -->
+            <div class="flex bg-gray-800 p-2" id="tabs">
+                <div class="tab px-4 py-2 bg-gray-700 rounded-t-md cursor-pointer transition duration-300" data-file="main">main</div>
+                <!-- Tabs will be generated dynamically -->
+            </div>
 
+            <!-- Editor -->
+            <div class="flex-1 bg-black p-4 relative overflow-y-auto" id="editor">
+                <div id="main" class="editor-content">
+                    <div class="flex flex-col items-center justify-center h-full text-center animate-fade-in">
+                        <img src="https://media.discordapp.net/attachments/1220051274041655386/1252086010263769098/xd.png?ex=6670ef77&is=666f9df7&hm=1c53f9d309084fb5703023303b37aeeda23dee8f74ea654b7af1cce09e5289ce&=&format=webp&quality=lossless&width=371&height=660" alt="Santiago Abuawad" class="rounded-full w-48 h-48 mx-auto shadow-lg transition duration-500 hover:scale-110">
+                        <h1 class="text-4xl font-bold mt-4">Santiago Abuawad</h1>
+                        <p class="text-xl mt-2">Software Engineer</p>
+                    </div>
+                </div>
+                <div id="about-me" class="editor-content hidden">
+                    <h1 class="text-3xl font-bold mb-4">About Me 👨‍💻</h1>
+                    <hr class="border-t-2 border-gray-600 mb-4">
+                    <div class="p-6 bg-gray-800 rounded-lg shadow-lg animate-slide-in mb-8">
+                        <p class="leading-loose">
+                            I am Santiago Abuawad, I am from Santa Cruz, Bolivia. I am a programmer currently studying software engineering at the Catholic University of San Pablo. I have been a fan of programming since I was 16. I started programming in JavaScript with Node.js, creating different bots and automations, which turned out very well. Then, I moved on to different backend jobs with APIs, using technologies like Express, Axios, and Superagent. It was a lot of fun. Currently, I focus on blockchain and cybersecurity, so I am quite related to these technologies. I offer SaaS related to these technologies and try to implement both in all my work. I consider myself someone who finds it very easy to direct and generate ideas.
+                        </p>
+                    </div>
+                    <div class="flex flex-col items-center justify-center text-center animate-fade-in mb-8">
+                        <img src="https://media.discordapp.net/attachments/1220051274041655386/1248674835295637586/196BB159-6054-4E6C-96BB-D4BBFF027277.jpg?ex=66710ccf&is=666fbb4f&hm=71612513f7cadffc571be26ea8b162785192a7c1f9df1590e75274c5cdca1b1a&=&format=webp&width=371&height=660" alt="Santiago Abuawad" class="rounded-full w-48 h-48 mx-auto shadow-lg transition duration-500 hover:scale-110">
+                        <p class="mt-4 leading-loose">
+                            I do not consider myself a soft person, I am a very strict person with a good character, but I am not someone who likes to do things wrong. I take my time. I learn quickly and I consider myself a good leader. I manage time well and, most importantly, perseverance.
+                        </p>
+                    </div>
+                    <h1 class="text-3xl font-bold mb-4">Skills 🔑</h1>
+                    <hr class="border-t-2 border-gray-600 mb-4">
+                    <div class="p-6 bg-gray-800 rounded-lg shadow-lg animate-slide-in">
+                        <h2 class="text-2xl font-bold mb-2">Web</h2>
+                        <ul class="list-disc list-inside pl-4">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>React</li>
+                            <li>Bubble</li>
+                        </ul>
+                        <h2 class="text-2xl font-bold mt-4 mb-2">Blockchain</h2>
+                        <ul class="list-disc list-inside pl-4">
+                            <li>Solidity</li>
+                            <li>Hardhat Network</li>
+                            <li>OpenZeppelin</li>
+                            <li>Node.js</li>
+                        </ul>
+                        <h2 class="text-2xl font-bold mt-4 mb-2">Cybersecurity</h2>
+                        <ul class="list-disc list-inside pl-4">
+                            <li>Python</li>
+                            <li>eJPTv2 Junior Penetration Tester</li>
+                        </ul>
+                        <h2 class="text-2xl font-bold mt-4 mb-2">Database</h2>
+                        <ul class="list-disc list-inside pl-4">
+                            <li>SQL</li>
+                            <li>PostgreSQL</li>
+                            <li>MariaDB</li>
+                            <li>MongoDB</li>
+                            <li>AWS</li>
+                        </ul>
+                        <h2 class="text-2xl font-bold mt-4 mb-2">Technologies</h2>
+                        <ul class="list-disc list-inside pl-4">
+                            <li>Fedora</li>
+                            <li>Visual Studio Code</li>
+                            <li>NPM</li>
+                            <li>Docker</li>
+                            <li>Git</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="projects" class="editor-content hidden">
+                    <h1 class="text-2xl font-bold">Projects</h1>
+                    <p></p>
+                </div>
+            </div>
+
+            <!-- Status Bar -->
+            <div class="bg-gray-800 p-2 flex justify-between">
+                <div>Status Message</div>
+                <div>Line 1, Col 1</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
